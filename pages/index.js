@@ -14,7 +14,7 @@ export default function Home() {
   const oneEditor = <QuoteEditor key="1-1" />;
 
   const grid2Editors = (
-    <div className="grid grid-rows-2 grid-cols-2">
+    <div className="grid grid-rows-2 grid-cols-2 gap-8">
       <QuoteEditor key="1-1" />
       <QuoteEditor key="1-2" />
       <QuoteEditor key="2-1" />
@@ -22,7 +22,7 @@ export default function Home() {
     </div>
   );
 
-  const content = selectedLayout === 1 ? oneEditor : grid2Editors;
+  const content = selectedLayout.id === 1 ? oneEditor : grid2Editors;
 
   return (
     <div className="flex flex-col items-center min-h-screen py-2">
@@ -31,7 +31,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
+      <header className="print:hidden">
         <Listbox as="div" className="w-40" value={selectedLayout} onChange={setSelectedlayout}>
           <Listbox.Button className="text-center mx-auto w-full p-2 mb-2 border  ">{selectedLayout.name}</Listbox.Button>
           <Listbox.Options className="p-2 bg-gray-100 space-y-2">
@@ -49,7 +49,7 @@ export default function Home() {
         </Listbox>
       </header>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 ">
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-8">
         {content}
       </main>
     </div>
