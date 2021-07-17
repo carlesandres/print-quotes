@@ -3,7 +3,7 @@ const TailwindClasses = ({ classes, onChange }) => {
 
   return (
     <textarea
-      className="text-lg p-4 print:hidden mb-8 font-mono w-full max-w-3xl bg-gray-100"
+      className="text-lg p-4 print:hidden font-mono w-full max-w-3xl bg-gray-100"
     value={classes} onChange={change} />
   );
 };
