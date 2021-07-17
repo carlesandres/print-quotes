@@ -3,13 +3,11 @@ import { useState } from 'react';
 const EditableQuote = ({classes}) => {
   const [ quote, setQuote ] = useState('Sample quote you can edit');
 
-  console.log('classes', classes);
-
   const change = event => {
     setQuote(event.target.value);
   };
 
-  const className = `${classes} editable border p-4 print:border-none`;
+  const className = `${classes} editable border p-4 flex-1 print:border-none`;
 
   return (
     <>
